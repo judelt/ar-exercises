@@ -7,4 +7,15 @@ require_relative './exercise_4'
 puts "Exercise 5"
 puts "----------"
 
-# Your code goes here ...
+# Exercise 5: Calculations
+# Output the total revenue for the entire company (all stores)
+puts "annual_revenue"
+puts Store.sum(:annual_revenue)
+
+# Output the average annual revenue for all stores
+puts "average annual_revenue"
+puts Store.average(:annual_revenue)
+
+# Output the number of stores that are generating $1M or more in annual sales.
+puts "number of stores that are generating $1M or more in annual sales"
+puts Store.where("annual_revenue >= ?", 1000000).count
